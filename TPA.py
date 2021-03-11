@@ -54,11 +54,9 @@ async def main():
             message.date = message.date + timedelta(hours=2)    
             
             if message.date.replace(tzinfo=None) > datetime.fromisoformat( \ 
-                str(messages_from_this_date)):
+                str(messages_from_this_date)) and message.photo:
                 # Proceed with only the messages from the relevant date
-
-                if message.photo:
-                    # Proceed only the message is photo
+                # and the message is photo
                     
                     # Use message dates as directory names
                     directory_name = str(message.date).split()[0]
