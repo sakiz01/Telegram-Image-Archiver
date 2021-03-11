@@ -1,5 +1,5 @@
 # Telegram Picture Archiver
-A simple script to download and save pictures in the specified chats as in the directory tree format below. It detects the last run date and only performs an incremental download by saving the pictures posted after the last time it was run. It also has some options you can specify according to your needs.
+A simple script to download and archive pictures in the specified chats as in the directory tree format below. It detects the last run date and only performs an incremental download by saving the pictures posted after the last time it was run. It also has some options you can specify according to your needs.
 
  * home_dir/
    * chat_1/
