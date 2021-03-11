@@ -15,3 +15,15 @@ A simple script to download and save pictures in the specified chats as in the d
        * ...
 	 * ...
    * ...
+   
+## Requirement:
+In the script, [Telethon](https://docs.telethon.dev/en/latest/index.html) library is used To interact with Telegram’s API. To install Telethon:
+```
+pip3 install telethon 
+```
+
+## How to run:
+To run Telegram Picture Archiver:
+```
+python3 TPA.py 
+```
