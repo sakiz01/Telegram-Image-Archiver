@@ -47,6 +47,16 @@ async def main():
         # Process only the messages after the required date 
         messages_from_this_date = detect_date(chat_name)
 
+        async for message in client.iter_messages(full_chat_name):
+            # Loop over each message in this chat
+            
+            # Update the timestamp of the message with UTC+2
+            message.date = message.date + timedelta(hours=2)    
+            
+            if message.date.replace(tzinfo=None) > datetime.fromisoformat( \ 
+                str(messages_from_this_date)):
+                # Proceed with only the messages from the relevant date
+
 
 async with client:
     await main()
