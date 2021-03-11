@@ -31,3 +31,22 @@ def detect_date(chat_name):
     else:
         # Full download since "start_from" required
         return datetime.fromisoformat(start_from)
+
+
+async def main():
+    message_list = []
+    for full_chat_name in chat_list:
+        # Loop over each chat on chat_list
+        # 
+        # Assign last part of full_chat_name to chat_name  
+        chat_name = os.path.basename(os.path.normpath(full_chat_name))
+        if not os.path.isdir(home_dir + chat_name):
+            # If a directory named as chat_name does not exist, create it
+            os.mkdir(home_dir + chat_name)
+
+        # Process only the messages after the required date 
+        messages_from_this_date = detect_date(chat_name)
+
+
+async with client:
+    await main()
