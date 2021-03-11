@@ -57,6 +57,34 @@ async def main():
                 str(messages_from_this_date)):
                 # Proceed with only the messages from the relevant date
 
+                if message.photo:
+                    # Proceed only the message is photo
+                    
+                    # Use message dates as directory names
+                    directory_name = str(message.date).split()[0]
+
+                    if not os.path.isdir(home_dir + chat_name + "/" + \ 
+                        directory_name):
+                        # Check if a directory named as the message's date 
+                        # exists or not
+                        os.mkdir(home_dir + chat_name + "/" + directory_name)
+
+                    # Construct the full download path of the file 
+                    file_download_path = home_dir + chat_name + "/" + \
+                        directory_name + "/" + chat_name + "_" + \
+                        str(message.id) + ".jpg"
+                        
+                    if not os.path.isfile(file_download_path):
+                        # Check if there is a file with the same name exists 
+                        # in the download path
+                        path = await message.download_media(file_download_path)
+                        print('The picture saved to: ', path)
+
+            else:
+                break
+
+            
+
 
 async with client:
     await main()
