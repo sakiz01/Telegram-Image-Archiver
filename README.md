@@ -23,7 +23,7 @@ pip3 install telethon
 ```
 
 ## How to run:
-To run Telegram Picture Archiver:
+First, make sure you specified the API ID, API key and options accordingly. After that, to run Telegram Picture Archiver:
 ```
 python3 TPA.py 
 ```
