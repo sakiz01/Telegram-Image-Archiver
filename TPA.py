@@ -79,12 +79,8 @@ async def main():
                         # in the download path
                         path = await message.download_media(file_download_path)
                         print('The picture saved to: ', path)
-
             else:
                 break
-
-            
-
 
 async with client:
     await main()
