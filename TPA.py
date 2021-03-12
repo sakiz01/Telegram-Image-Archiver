@@ -7,17 +7,17 @@ api_id = <your_api_id>    # Ex. 1234567
 api_hash = <your_api_hash>    # Ex. '0a1b2c3d4e5f60a1b2c3d4e5f60a1b2c'
 
 # These are the options you can specify according to your needs
-home_dir = "/path/to/dir/"    # Home directory to download pictures  
-# List of chats with pictures
+home_dir = "/path/to/dir/"    # Home directory to download images  
+# List of chats with images
 chat_list = ["https://t.me/someone", "https://t.me/channel_1"]
-# On the first run, all pictures posted after this date will be downloaded
+# On the first run, all images posted after this date will be downloaded
 start_from = "2020-08-28"
 
 # Connect to Telegram
 client = TelegramClient('anon', api_id, api_hash)
 
 def detect_date(chat_name):
-    """This function ensures that only the pictures after the required date 
+    """This function ensures that only the images after the required date 
     will be downloaded """
     
     # Check folders named with previous dates already exist or not
@@ -76,7 +76,7 @@ async def main():
                     # Check if there is a file with the same name exists 
                     # in the download path
                     path = await message.download_media(file_download_path)
-                    print('The picture saved to: ', path)
+                    print('The image saved to: ', path)
             else:
                 break
 
